@@ -1,13 +1,9 @@
 ﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include "player.h"
 #include <QMainWindow>
 #include <QWidget>
-#include <QVBoxLayout>
-#include <QhBoxLayout>
-#include <QList>
-#include <QLabel>
-#include <QString>
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -17,6 +13,7 @@ private:
     int size = 50;
     QList<QList<QLabel*>> list;
     QVBoxLayout *vbl = nullptr;
+    player *snake;
     // QHBoxLayout *hbl = nullptr;
     QWidget *main = nullptr;
 public:
@@ -24,5 +21,9 @@ public:
     ~MainWindow();
     void start_game();
     void load_field();
+    // void update_head_position(int, int);
+    void set_color(QPoint, bool);
+protected:
+    void keyPressEvent(QKeyEvent *event);
 };
 #endif // MAINWINDOW_H
