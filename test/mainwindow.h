@@ -8,10 +8,10 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 private:
-    int m = 10;
-    int n = 10;
-    int size = 50;
-    QList<QList<QLabel*>> list;
+    int m = 10; // x
+    int n = 10; // y
+    int size = 50; // cell size
+    QList<QList<QLabel*>> list; // matrix of label pointers
     QVBoxLayout *vbl = nullptr;
     player *snake;
     // QHBoxLayout *hbl = nullptr;
@@ -21,7 +21,6 @@ public:
     ~MainWindow();
     void start_game();
     void load_field();
-    // void update_head_position(int, int);
     void set_color(QPoint, bool);
 protected:
     void keyPressEvent(QKeyEvent *event);

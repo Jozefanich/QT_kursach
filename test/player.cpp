@@ -6,10 +6,12 @@ player::player() {
 }
 
 void player::get_field_size(QPoint pt){
+    // set field size
     gate = {pt.x()-1, pt.y()-1};
 }
 
 void player::set_position(int x, int y){
+    //set snake position for the first time
     position[position.length()-1] = {x, y};
 }
 
