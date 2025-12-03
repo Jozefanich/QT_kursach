@@ -8,8 +8,11 @@
 #include <QLabel>
 #include <QString>
 #include <QKeyEvent>
-class player
+#include <QTimer>
+
+class player : public QObject
 {
+    Q_OBJECT
 public:
     player();
     void press_left();
@@ -24,6 +27,8 @@ private:
     QList<QPoint> position;
     QPoint gate;
     QPoint way;
+signals:
+    void stop();
 };
 
 #endif // PLAYER_H

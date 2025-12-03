@@ -1,5 +1,5 @@
 ﻿#include "player.h"
-
+#include "mainwindow.h"
 player::player() {
     position.push_back({0,0});
     gate = {5,5};
@@ -33,6 +33,7 @@ void player::moove(/*int x, int y*/){
     ps = {ps.x() + way.x(), ps.y() + way.y()}; // current position + direction
     if(ps.x() < 0 or ps.x() > gate.x()or ps.y()< 0 or ps.y() > gate.y()){
         qDebug()<<"die";
+        emit stop(); // stop signall when snake die
     }
     else{
         qDebug() << way.x() << " " << way.y();

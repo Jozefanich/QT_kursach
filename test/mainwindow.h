@@ -14,8 +14,14 @@ private:
     QList<QList<QLabel*>> list; // matrix of label pointers
     QVBoxLayout *vbl = nullptr;
     player *snake;
-    // QHBoxLayout *hbl = nullptr;
+    QTimer *timer = nullptr; // auto moove
+    int base_key = 16777234;
+    int index = 3;
     QWidget *main = nullptr;
+private slots:
+    void player_moove();// start game, snake moove forvard untill die
+public slots:
+    void stop_timer();// when player die
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
